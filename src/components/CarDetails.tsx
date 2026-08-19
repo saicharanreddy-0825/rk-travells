@@ -1,6 +1,7 @@
-import { X, Users, Settings2, Fuel, MapPin, Calendar, Clock } from "lucide-react";
+import { X, Users, Settings2, Fuel } from "lucide-react";
 import { Vehicle } from "@/lib/site-data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ImageLightbox } from "./ImageLightbox";
 
 interface CarDetailsProps {
   vehicle: Vehicle;
@@ -16,6 +17,12 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
       document.body.style.overflow = "unset";
     };
   }, []);
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const imagesToShow = vehicle.gallery && vehicle.gallery.length > 0 
+    ? vehicle.gallery 
+    : [vehicle.image];
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-ink/40 backdrop-blur-sm animate-in fade-in duration-200">
@@ -44,28 +51,43 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
           
           {vehicle.gallery && vehicle.gallery.length > 0 ? (
             <div className="flex flex-col gap-4">
-              <img 
-                src={vehicle.gallery[0]} 
-                alt={vehicle.name} 
-                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
-              />
+              <div 
+                className="cursor-zoom-in relative group rounded-xl overflow-hidden"
+                onClick={() => setLightboxIndex(0)}
+              >
+                <img 
+                  src={vehicle.gallery[0]} 
+                  alt={vehicle.name} 
+                  className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
               <div className="grid grid-cols-2 gap-4">
                 {vehicle.gallery.slice(1).map((img, idx) => (
-                  <img 
+                  <div 
                     key={idx}
-                    src={img} 
-                    alt={`${vehicle.name} detail ${idx + 1}`} 
-                    className="w-full h-32 object-cover rounded-xl shadow-sm"
-                  />
+                    className="cursor-zoom-in relative group rounded-xl overflow-hidden"
+                    onClick={() => setLightboxIndex(idx + 1)}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`${vehicle.name} detail ${idx + 1}`} 
+                      className="w-full h-32 object-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
-            <img 
-              src={vehicle.image} 
-              alt={vehicle.name} 
-              className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
-            />
+            <div 
+              className="cursor-zoom-in relative group rounded-xl overflow-hidden"
+              onClick={() => setLightboxIndex(0)}
+            >
+              <img 
+                src={vehicle.image} 
+                alt={vehicle.name} 
+                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
           )}
 
           <div className="grid grid-cols-3 gap-4 mt-8">
@@ -133,6 +155,14 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
           </div>
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={imagesToShow}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 }

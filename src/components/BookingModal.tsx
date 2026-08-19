@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { X, Calendar, Clock, MapPin, Users, Settings2, Fuel } from "lucide-react";
 import { Vehicle } from "@/lib/site-data";
+import { ImageLightbox } from "./ImageLightbox";
 
 interface BookingModalProps {
   vehicle: Vehicle;
@@ -15,6 +16,12 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
       document.body.style.overflow = "unset";
     };
   }, []);
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const imagesToShow = vehicle.gallery && vehicle.gallery.length > 0 
+    ? vehicle.gallery 
+    : [vehicle.image];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -138,28 +145,43 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
             
             {vehicle.gallery && vehicle.gallery.length > 0 ? (
               <div className="flex flex-col gap-4 mb-6">
-                <img 
-                  src={vehicle.gallery[0]} 
-                  alt={vehicle.name} 
-                  className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
-                />
+                <div 
+                  className="cursor-zoom-in relative group rounded-xl overflow-hidden"
+                  onClick={() => setLightboxIndex(0)}
+                >
+                  <img 
+                    src={vehicle.gallery[0]} 
+                    alt={vehicle.name} 
+                    className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   {vehicle.gallery.slice(1).map((img, idx) => (
-                    <img 
+                    <div 
                       key={idx}
-                      src={img} 
-                      alt={`${vehicle.name} detail ${idx + 1}`} 
-                      className="w-full h-24 object-cover rounded-xl shadow-sm"
-                    />
+                      className="cursor-zoom-in relative group rounded-xl overflow-hidden"
+                      onClick={() => setLightboxIndex(idx + 1)}
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${vehicle.name} detail ${idx + 1}`} 
+                        className="w-full h-24 object-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
             ) : (
-              <img 
-                src={vehicle.image} 
-                alt={vehicle.name} 
-                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl mb-6"
-              />
+              <div 
+                className="cursor-zoom-in relative group rounded-xl overflow-hidden mb-6"
+                onClick={() => setLightboxIndex(0)}
+              >
+                <img 
+                  src={vehicle.image} 
+                  alt={vehicle.name} 
+                  className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
             )}
 
             <div className="space-y-4">
@@ -351,6 +373,14 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
           </form>
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={imagesToShow}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   );
 }

@@ -97,18 +97,31 @@ export function Navbar() {
             </a>
           ))}
           <div className="flex flex-col gap-3 mt-4">
+            <div className="flex flex-col gap-2 mb-2 px-2 text-base font-semibold text-ink">
+              <a href={`tel:+91${business.phone}`} className="flex items-center gap-3 py-1"><Phone className="size-4 text-primary" /> {business.phone}</a>
+              <a href={`tel:+91${business.additionalPhone}`} className="flex items-center gap-3 py-1"><Phone className="size-4 text-primary" /> {business.additionalPhone}</a>
+            </div>
             <a
-              href={business.phoneHref}
+              href={`tel:+91${business.phone}`}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-white px-4 py-2.5 text-sm font-semibold text-primary"
             >
-              <Phone className="size-4" /> Call {business.phone}
+              Call
             </a>
             <a
-              href="#cars"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm"
+              href={business.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white shadow-sm"
             >
-              Book Now
+              WhatsApp
+            </a>
+            <a
+              href={business.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-sm"
+            >
+              Get Directions
             </a>
           </div>
         </div>

@@ -17,10 +17,16 @@ export function ContactCTA() {
         
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-12">
           <a
-            href={business.phoneHref}
+            href={`tel:+91${business.phone}`}
             className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl hover:scale-105 transition-transform"
           >
-            <Phone className="size-5" /> Call Now
+            <Phone className="size-5" /> Call {business.phone}
+          </a>
+          <a
+            href={`tel:+91${business.additionalPhone}`}
+            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl hover:scale-105 transition-transform"
+          >
+            <Phone className="size-5" /> Call {business.additionalPhone}
           </a>
           <a
             href={business.whatsapp}
@@ -28,7 +34,7 @@ export function ContactCTA() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-lg font-bold text-white shadow-xl hover:scale-105 transition-transform"
           >
-            <MessageCircle className="size-5" /> WhatsApp Us
+            <MessageCircle className="size-5" /> WhatsApp
           </a>
           <a
             href={business.mapsUrl}

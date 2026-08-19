@@ -9,7 +9,7 @@ export const business = {
   name: "Vinayaka Self Drive Cars and Car Rentals",
   shortName: "Vinayaka Self Drive Cars",
   phone: "6300943161",
-  additionalPhone: "957366842",
+  additionalPhone: "9573668424",
   phoneHref: "tel:+916300943161",
   whatsapp: "https://wa.me/916300943161?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20self-drive%20car.",
   rating: "4.8",
@@ -18,7 +18,7 @@ export const business = {
   hours: "Open 24 Hours",
   area: "Hanamkonda, Warangal, Telangana",
   address: "Road No-8, Postal Colony, Julywada, Hanamkonda, Telangana",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Road+No-8,+Postal+Colony,+Julywada,+Hanamkonda,+Telangana",
+  mapsUrl: "https://www.google.com/maps/place/VINAYAKA+SELF+DRIVE+CARS/@17.9898933,79.5509867,19.81z/data=!4m12!1m5!3m4!2zMTfCsDU5JzIzLjUiTiA3OcKwMzMnMDMuNCJF!8m2!3d17.989867!4d79.5509499!3m5!1s0x3a334f8f882ae2fd:0x4012e6d763fc6307!8m2!3d17.9899406!4d79.5509331!16s%2Fg%2F11jzqqd7nb?entry=ttu&g_ep=EgoyMDI2MDgxNi4wIKXMDSoASAFQAw%3D%3D",
   dealsIn: [
     "Self Drive Cars",
     "Car Rentals",

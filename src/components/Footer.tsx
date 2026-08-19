@@ -66,7 +66,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-bold font-display mb-6">Contact</h3>
-            <ul className="space-y-4 text-sm text-white/70">
+            <ul className="space-y-4 text-sm text-white/70 mb-6">
               <li className="flex items-start gap-3">
                 <MapPin className="size-5 text-primary shrink-0 mt-0.5" />
                 <span>{business.address}</span>
@@ -83,6 +83,14 @@ export function Footer() {
                 <span>{business.hours}</span>
               </li>
             </ul>
+            <a
+              href={business.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary/20 hover:bg-primary px-5 text-sm font-bold text-white transition-colors border border-primary/30"
+            >
+              📍 Get Directions
+            </a>
           </div>
         </div>
 

@@ -38,8 +38,17 @@ export function About() {
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Choose from a wide range of well-maintained vehicles and enjoy a convenient, flexible and comfortable travel experience. Whether you need a small hatchback for city driving, a comfortable sedan for family trips, or a spacious SUV for group travel, we have the perfect ride for you.
           </p>
+          <div className="bg-gray-50 rounded-2xl p-6 mb-8 border border-gray-100">
+            <h3 className="font-bold text-ink mb-2">Location</h3>
+            <p className="text-sm text-muted-foreground mb-4">{business.address}</p>
+            <h3 className="font-bold text-ink mb-2">Phone</h3>
+            <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+              <a href={`tel:+91${business.phone}`} className="hover:text-primary transition-colors">{business.phone}</a>
+              <a href={`tel:+91${business.additionalPhone}`} className="hover:text-primary transition-colors">{business.additionalPhone}</a>
+            </div>
+          </div>
           <a
-            href={business.phoneHref}
+            href={`tel:+91${business.phone}`}
             className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-base font-semibold text-white shadow-lg hover:bg-ink/80 transition-all"
           >
             Contact Us Today

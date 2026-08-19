@@ -1,5 +1,5 @@
 import { MapPin, Calendar, Clock, Search, ShieldCheck, Award } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/selfdrivebackground.png";
 import { business } from "@/lib/site-data";
 
 export function Hero() {

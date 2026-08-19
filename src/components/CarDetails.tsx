@@ -5,9 +5,10 @@ import { useEffect } from "react";
 interface CarDetailsProps {
   vehicle: Vehicle;
   onClose: () => void;
+  onBookNow: (vehicle: Vehicle) => void;
 }
 
-export function CarDetails({ vehicle, onClose }: CarDetailsProps) {
+export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
   // Prevent scrolling on body when modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -97,14 +98,12 @@ export function CarDetails({ vehicle, onClose }: CarDetailsProps) {
           </div>
 
           <div className="mt-auto flex flex-col sm:flex-row gap-3">
-            <a
-              href={`https://wa.me/916300943161?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => onBookNow(vehicle)}
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] text-white px-6 py-4 font-bold shadow-md hover:bg-[#20b958] transition-all hover:-translate-y-0.5"
             >
-              WhatsApp Booking
-            </a>
+              Book Now
+            </button>
             <a
               href="tel:+916300943161"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-6 py-4 font-bold shadow-md hover:bg-primary/90 transition-all hover:-translate-y-0.5"

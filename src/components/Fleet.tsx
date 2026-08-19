@@ -2,11 +2,13 @@ import { useState, useMemo } from "react";
 import { CategoryFilter } from "./CategoryFilter";
 import { CarCard } from "./CarCard";
 import { CarDetails } from "./CarDetails";
+import { BookingModal } from "./BookingModal";
 import { vehicles, Vehicle } from "@/lib/site-data";
 
 export function Fleet() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [bookingVehicle, setBookingVehicle] = useState<Vehicle | null>(null);
 
   const filteredVehicles = useMemo(() => {
     if (selectedCategory === "All") return vehicles;
@@ -31,6 +33,7 @@ export function Fleet() {
               <CarCard
                 vehicle={vehicle}
                 onViewDetails={setSelectedVehicle}
+                onBookNow={setBookingVehicle}
               />
             </div>
           ))}
@@ -47,6 +50,17 @@ export function Fleet() {
         <CarDetails
           vehicle={selectedVehicle}
           onClose={() => setSelectedVehicle(null)}
+          onBookNow={(vehicle) => {
+            setSelectedVehicle(null);
+            setBookingVehicle(vehicle);
+          }}
+        />
+      )}
+
+      {bookingVehicle && (
+        <BookingModal
+          vehicle={bookingVehicle}
+          onClose={() => setBookingVehicle(null)}
         />
       )}
     </section>

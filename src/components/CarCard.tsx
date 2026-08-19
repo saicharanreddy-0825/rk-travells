@@ -4,9 +4,10 @@ import { Vehicle } from "@/lib/site-data";
 interface CarCardProps {
   vehicle: Vehicle;
   onViewDetails: (vehicle: Vehicle) => void;
+  onBookNow: (vehicle: Vehicle) => void;
 }
 
-export function CarCard({ vehicle, onViewDetails }: CarCardProps) {
+export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
   return (
     <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 flex flex-col h-full group">
       {/* Image container */}
@@ -64,14 +65,12 @@ export function CarCard({ vehicle, onViewDetails }: CarCardProps) {
           >
             Details
           </button>
-          <a
-            href={`https://wa.me/916300943161?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onBookNow(vehicle)}
             className="flex-1 h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm hover:bg-accent/90 hover:-translate-y-0.5 transition-all"
           >
             Book Now
-          </a>
+          </button>
         </div>
       </div>
     </div>

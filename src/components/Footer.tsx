@@ -67,9 +67,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold font-display mb-6">Contact</h3>
             <ul className="space-y-4 text-sm text-white/70 mb-6">
-              <li className="flex items-start gap-3">
-                <MapPin className="size-5 text-primary shrink-0 mt-0.5" />
-                <span>{business.address}</span>
+              <li>
+                <a 
+                  href={business.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 cursor-pointer group"
+                >
+                  <MapPin className="size-5 text-primary shrink-0 mt-0.5" />
+                  <span className="group-hover:text-primary transition-colors">{business.address}</span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="size-5 text-primary shrink-0" />

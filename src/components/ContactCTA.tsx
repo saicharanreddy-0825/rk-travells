@@ -52,10 +52,15 @@ export function ContactCTA() {
             <span className="font-semibold">{business.phone} <span className="font-normal opacity-75 hidden sm:inline-block">/</span> {business.additionalPhone}</span>
           </div>
           <div className="hidden sm:block w-px h-6 bg-white/20"></div>
-          <div className="flex items-center gap-2 max-w-sm">
+          <a
+            href={business.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 max-w-sm cursor-pointer group p-2 -m-2 rounded-xl hover:bg-white/5 transition-colors"
+          >
             <MapPin className="size-5 text-accent shrink-0" />
-            <span className="font-semibold text-sm leading-tight">{business.address}</span>
-          </div>
+            <span className="font-semibold text-sm leading-tight group-hover:text-accent transition-colors">{business.address}</span>
+          </a>
         </div>
       </div>
     </section>

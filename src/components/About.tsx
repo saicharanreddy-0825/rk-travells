@@ -40,7 +40,14 @@ export function About() {
           </p>
           <div className="bg-gray-50 rounded-2xl p-6 mb-8 border border-gray-100">
             <h3 className="font-bold text-ink mb-2">Location</h3>
-            <p className="text-sm text-muted-foreground mb-4">{business.address}</p>
+            <a 
+              href={business.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground mb-4 block hover:text-primary transition-colors cursor-pointer"
+            >
+              {business.address}
+            </a>
             <h3 className="font-bold text-ink mb-2">Phone</h3>
             <div className="flex flex-col gap-1 text-sm text-muted-foreground">
               <a href={`tel:+91${business.phone}`} className="hover:text-primary transition-colors">{business.phone}</a>

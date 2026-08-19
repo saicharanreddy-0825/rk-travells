@@ -65,7 +65,7 @@ export function CarCard({ vehicle, onViewDetails }: CarCardProps) {
             Details
           </button>
           <a
-            href={`https://wa.me/918904948966?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
+            href={`https://wa.me/916300943161?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm hover:bg-accent/90 hover:-translate-y-0.5 transition-all"

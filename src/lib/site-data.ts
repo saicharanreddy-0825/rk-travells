@@ -7,17 +7,18 @@ import tempo from "@/assets/tempo.jpg";
 
 export const business = {
   name: "Vinayaka Self Drive Cars and Car Rentals",
-  shortName: "Vinayaka",
-  phone: "08904948966",
-  phoneHref: "tel:+918904948966",
-  whatsapp: "https://wa.me/918904948966?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20self-drive%20car.",
+  shortName: "Vinayaka Self Drive Cars",
+  phone: "6300943161",
+  additionalPhone: "957366842",
+  phoneHref: "tel:+916300943161",
+  whatsapp: "https://wa.me/916300943161?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20self-drive%20car.",
   rating: "4.8",
-  ratingCount: "215 Ratings",
+  ratingSource: "Justdial",
   years: "9+ Years in Business",
   hours: "Open 24 Hours",
   area: "Hanamkonda, Warangal, Telangana",
-  address: "Hanamkonda, Warangal, Telangana",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Vinayaka+Self+Drive+Cars+Hanamkonda+Warangal",
+  address: "Road No-8, Postal Colony, Julywada, Hanamkonda, Telangana",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Road+No-8,+Postal+Colony,+Julywada,+Hanamkonda,+Telangana",
   dealsIn: [
     "Self Drive Cars",
     "Car Rentals",
@@ -196,15 +197,21 @@ export const vehicles: Vehicle[] = [
 
 export const reviews = [
   {
-    name: "Abhishek S.",
-    text: "Excellent service and well-maintained cars. Booking was smooth and the staff was very cooperative. Highly recommended for self-drive cars in Warangal.",
+    name: "Rajasekhar",
+    rating: 5,
+    date: "03 Feb 2025",
+    tags: ["Good service", "Clean vehicle"],
+    text: "Vinayaka Self Drive Cars and Car Rentals provided excellent service. The vehicle was clean and well-maintained. Highly recommended!",
   },
   {
-    name: "Priya K.",
-    text: "Affordable prices and great customer service. The vehicle was clean and in perfect condition. Will definitely use their service again.",
+    name: "Sai",
+    rating: 5,
+    text: "Great service in warangal",
   },
   {
-    name: "Rohan V.",
-    text: "Good experience overall. The car was reliable and the pricing was transparent. Documentation was quick and simple.",
+    name: "Ranjith",
+    rating: 5,
+    date: "20 Jun 2020",
+    text: "Good service and good price",
   },
 ];

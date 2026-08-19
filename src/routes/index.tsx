@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Fleet } from "@/components/Fleet";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Services } from "@/components/Services";
+import { Reviews } from "@/components/Reviews";
 import { About } from "@/components/About";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Self drive car rentals in Hanamkonda, Warangal. Hatchbacks, sedans, SUVs, tempo travellers and buses on rent. Open 24 hours. Call 08904948966.",
+          "Self drive car rentals in Hanamkonda, Warangal. Hatchbacks, sedans, SUVs, tempo travellers and buses on rent. Open 24 hours.",
       },
     ],
   }),
@@ -32,6 +33,7 @@ function Index() {
         <Fleet />
         <WhyChooseUs />
         <Services />
+        <Reviews />
         <About />
         <ContactCTA />
       </main>

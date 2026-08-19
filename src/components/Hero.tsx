@@ -1,4 +1,4 @@
-import { MapPin, Calendar, Clock, Search } from "lucide-react";
+import { MapPin, Calendar, Clock, Search, ShieldCheck, Award } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { business } from "@/lib/site-data";
 
@@ -17,33 +17,31 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 flex flex-col items-start pt-10">
         <div className="max-w-2xl text-white">
+          <div className="flex flex-wrap gap-4 mb-6 text-xs sm:text-sm font-bold text-accent uppercase tracking-wider">
+            <span className="flex items-center gap-1.5"><ShieldCheck className="size-4" /> Claimed & Verified</span>
+            <span className="flex items-center gap-1.5"><Clock className="size-4" /> Open 24 Hrs</span>
+            <span className="flex items-center gap-1.5"><Award className="size-4" /> 9+ Years in Business</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight font-display">
-            Self Drive Cars in <span className="text-primary">Hanamkonda & Warangal</span>
+            Vinayaka Self Drive Cars <br className="hidden sm:block" />
+            <span className="text-primary">and Car Rentals</span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-white/90">
-            Rent your perfect car and enjoy the freedom to travel your way. 24/7 availability with transparent pricing.
+          <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed">
+            24/7 self-drive car rentals in Hanamkonda and Warangal with easy booking and affordable prices.
           </p>
           
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#cars"
+              href={business.phoneHref}
               className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-semibold text-white shadow-lg hover:bg-primary/90 transition-all hover:scale-105"
             >
-              Browse Cars
+              Book by Phone
             </a>
             <a
-              href={business.phoneHref}
+              href="#cars"
               className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-base font-semibold text-ink shadow-lg hover:bg-gray-50 transition-all"
             >
-              Book Now
-            </a>
-            <a
-              href={business.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md px-8 text-base font-semibold text-white hover:bg-white/20 transition-all"
-            >
-              WhatsApp Us
+              View Fleet & Pricing
             </a>
           </div>
         </div>

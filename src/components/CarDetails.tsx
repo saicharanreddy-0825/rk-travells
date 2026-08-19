@@ -98,7 +98,7 @@ export function CarDetails({ vehicle, onClose }: CarDetailsProps) {
 
           <div className="mt-auto flex flex-col sm:flex-row gap-3">
             <a
-              href={`https://wa.me/918904948966?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
+              href={`https://wa.me/916300943161?text=Hi,%20I%20want%20to%20book%20the%20${encodeURIComponent(vehicle.name)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] text-white px-6 py-4 font-bold shadow-md hover:bg-[#20b958] transition-all hover:-translate-y-0.5"
@@ -106,7 +106,7 @@ export function CarDetails({ vehicle, onClose }: CarDetailsProps) {
               WhatsApp Booking
             </a>
             <a
-              href="tel:+918904948966"
+              href="tel:+916300943161"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-6 py-4 font-bold shadow-md hover:bg-primary/90 transition-all hover:-translate-y-0.5"
             >
               Call to Book

@@ -21,8 +21,8 @@ export function About() {
                 <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Vehicles</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">4.8</span>
-                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Star Rating</span>
+                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">{business.rating}</span>
+                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">{business.ratingSource} Rating</span>
               </div>
             </div>
           </div>

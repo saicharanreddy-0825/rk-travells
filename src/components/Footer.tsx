@@ -44,6 +44,7 @@ export function Footer() {
               <li><a href="#cars" className="hover:text-primary transition-colors">Cars</a></li>
               <li><a href="#why-us" className="hover:text-primary transition-colors">About</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
+              <li><a href="#why-us" className="hover:text-primary transition-colors">Why Choose Us</a></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Policies</a></li>
             </ul>
@@ -57,7 +58,8 @@ export function Footer() {
               <li><a href="#services" className="hover:text-primary transition-colors">Car Rentals</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">SUV Rentals</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Sedan Rentals</a></li>
-              <li><a href="#services" className="hover:text-primary transition-colors">Taxi Services</a></li>
+              <li><a href="#services" className="hover:text-primary transition-colors">Hatchback Rentals</a></li>
+              <li><a href="#services" className="hover:text-primary transition-colors">Outstation Travel</a></li>
             </ul>
           </div>
 
@@ -71,7 +73,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="size-5 text-primary shrink-0" />
-                <a href={business.phoneHref} className="hover:text-primary transition-colors">{business.phone}</a>
+                <div className="flex flex-col gap-1">
+                  <a href={business.phoneHref} className="hover:text-primary transition-colors">{business.phone}</a>
+                  <a href={`tel:+91${business.additionalPhone}`} className="hover:text-primary transition-colors">{business.additionalPhone}</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-primary font-semibold text-xs uppercase tracking-wider">Hours</span>
+                <span>{business.hours}</span>
               </li>
             </ul>
           </div>

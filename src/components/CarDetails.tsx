@@ -42,11 +42,31 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
             <h2 className="text-3xl font-bold font-display text-ink">{vehicle.name}</h2>
           </div>
           
-          <img 
-            src={vehicle.image} 
-            alt={vehicle.name} 
-            className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
-          />
+          {vehicle.gallery && vehicle.gallery.length > 0 ? (
+            <div className="flex flex-col gap-4">
+              <img 
+                src={vehicle.gallery[0]} 
+                alt={vehicle.name} 
+                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
+              />
+              <div className="grid grid-cols-2 gap-4">
+                {vehicle.gallery.slice(1).map((img, idx) => (
+                  <img 
+                    key={idx}
+                    src={img} 
+                    alt={`${vehicle.name} detail ${idx + 1}`} 
+                    className="w-full h-32 object-cover rounded-xl shadow-sm"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <img 
+              src={vehicle.image} 
+              alt={vehicle.name} 
+              className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
+            />
+          )}
 
           <div className="grid grid-cols-3 gap-4 mt-8">
             <div className="flex flex-col items-center p-3 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">

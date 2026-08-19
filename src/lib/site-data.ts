@@ -4,6 +4,9 @@ import hatchback from "@/assets/hatchback.jpg";
 import muv from "@/assets/muv.jpg";
 import bus from "@/assets/bus.jpg";
 import tempo from "@/assets/tempo.jpg";
+import ertiga2 from "@/assets/Ertiga 2.jpeg";
+import ertiga3 from "@/assets/Ertiga 3.jpeg";
+import ertiga1 from "@/assets/Ertiga 1.jpeg";
 
 export const business = {
   name: "Vinayaka Self Drive Cars and Car Rentals",
@@ -46,9 +49,27 @@ export type Vehicle = {
   limit24h: string;
   extraHr: string;
   extraKm: string;
+  gallery?: string[];
 };
 
 export const vehicles: Vehicle[] = [
+  {
+    id: "v10",
+    name: "Maruti Suzuki Ertiga CNG",
+    category: "MUVs",
+    image: ertiga2,
+    badge: "Family MUV",
+    seats: "7 Seats",
+    transmission: "Manual",
+    fuel: "CNG",
+    price12h: "₹1,999",
+    limit12h: "200 km",
+    price24h: "₹2,799",
+    limit24h: "200 km",
+    extraHr: "₹250",
+    extraKm: "₹15",
+    gallery: [ertiga2, ertiga3, ertiga1],
+  },
   {
     id: "v1",
     name: "Maruti Suzuki Swift",

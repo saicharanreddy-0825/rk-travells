@@ -136,11 +136,31 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
               <h2 className="text-3xl font-bold font-display text-ink">{vehicle.name}</h2>
             </div>
             
-            <img 
-              src={vehicle.image} 
-              alt={vehicle.name} 
-              className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl mb-6"
-            />
+            {vehicle.gallery && vehicle.gallery.length > 0 ? (
+              <div className="flex flex-col gap-4 mb-6">
+                <img 
+                  src={vehicle.gallery[0]} 
+                  alt={vehicle.name} 
+                  className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl"
+                />
+                <div className="grid grid-cols-2 gap-4">
+                  {vehicle.gallery.slice(1).map((img, idx) => (
+                    <img 
+                      key={idx}
+                      src={img} 
+                      alt={`${vehicle.name} detail ${idx + 1}`} 
+                      className="w-full h-24 object-cover rounded-xl shadow-sm"
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <img 
+                src={vehicle.image} 
+                alt={vehicle.name} 
+                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl mb-6"
+              />
+            )}
 
             <div className="space-y-4">
               <div className="flex items-center gap-3 p-3 bg-white rounded-2xl border border-gray-100 shadow-sm">

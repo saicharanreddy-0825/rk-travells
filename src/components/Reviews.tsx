@@ -2,8 +2,7 @@ import { Star, ExternalLink, User } from "lucide-react";
 import { business, reviews } from "@/lib/site-data";
 
 export function Reviews() {
-  // Placeholder Justdial URL - waiting for the exact URL from the user
-  const justdialUrl = "https://www.justdial.com/Warangal/Vinayaka-Self-Drive-Cars-Hanamkonda"; // I will ask user for exact link if needed, but for now this is a safe placeholder.
+  const justdialUrl = "https://www.justdial.com/Warangal/Vinayaka-Self-Drive-Cars-and-Car-Rentals-Near-St-Girls-Hostel-Hanamkonda/9999PX870-X870-200531113054-P9Z4_BZDET?trkid=&term=&ncatid=11276270&area=&search=Showing%20Results%20for%20%22Vinayaka%20Self%20Drive%20Cars%20Hanamkonda%22%20in%20Warangal&mncatname=Vinayaka%20Self%20Drive%20Cars%20Hanamkonda&ftterm=Vinayaka%20Self%20Drive%20Cars%20Hanamkonda&csell=&oncatid=11276270&abd_btn=&abd_heading=&isFreetxt=1&bd=2&cat_b2b_flag=&searchfrom=lst&thumbnail=";
 
   return (
     <section className="py-24 bg-gray-50/50">

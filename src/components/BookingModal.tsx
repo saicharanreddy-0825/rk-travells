@@ -56,31 +56,53 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     const price = formData.duration === "12 Hours" ? vehicle.price12h : vehicle.price24h;
     const limit = formData.duration === "12 Hours" ? vehicle.limit12h : vehicle.limit24h;
 
+    // Format Date from YYYY-MM-DD to DD-MM-YYYY
+    const formatDate = (dateStr: string) => {
+      if (!dateStr) return "";
+      const [year, month, day] = dateStr.split("-");
+      return `${day}-${month}-${year}`;
+    };
+
+    // Format Time from HH:MM to 12-hour AM/PM
+    const formatTime = (timeStr: string) => {
+      if (!timeStr) return "";
+      const [hourStr, minStr] = timeStr.split(":");
+      let hour = parseInt(hourStr, 10);
+      const ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12;
+      if (hour === 0) hour = 12;
+      const formattedHour = hour.toString().padStart(2, "0");
+      return `${formattedHour}:${minStr} ${ampm}`;
+    };
+
+    // Replace ₹ with Rs.
+    const formattedPrice = price.replace("₹", "Rs. ");
+
     // Generate WhatsApp Message
     let text = `Hello Vinayaka Self Drive Cars,\n\nI would like to book a car.\n\n`;
-    text += `🚗 Vehicle: ${vehicle.name}\n`;
-    text += `👤 Customer Name: ${formData.name}\n`;
-    text += `📞 Phone: ${formData.phone}\n\n`;
+    text += `Vehicle: ${vehicle.name}\n\n`;
+    text += `Customer Name: ${formData.name}\n`;
+    text += `Phone: ${formData.phone}\n\n`;
     
-    text += `📅 Pickup Date: ${formData.pickupDate}\n`;
-    text += `⏰ Pickup Time: ${formData.pickupTime}\n\n`;
+    text += `Pickup Date: ${formatDate(formData.pickupDate)}\n`;
+    text += `Pickup Time: ${formatTime(formData.pickupTime)}\n\n`;
     
-    text += `📅 Return Date: ${formData.returnDate}\n`;
-    text += `⏰ Return Time: ${formData.returnTime}\n\n`;
+    text += `Return Date: ${formatDate(formData.returnDate)}\n`;
+    text += `Return Time: ${formatTime(formData.returnTime)}\n\n`;
     
-    text += `⏱ Rental Duration: ${formData.duration}\n`;
+    text += `Rental Duration: ${formData.duration}\n\n`;
     if (formData.pickupLocation) {
-      text += `📍 Pickup Location: ${formData.pickupLocation}\n`;
+      text += `Pickup Location: ${formData.pickupLocation}\n\n`;
     }
     
-    text += `\n💰 Rental Price: ${price}\n`;
-    text += `📏 KM Limit: ${limit}\n`;
+    text += `Rental Price: ${formattedPrice}\n`;
+    text += `KM Limit: ${limit}\n\n`;
 
     if (formData.message) {
-      text += `\n📝 Message: ${formData.message}\n`;
+      text += `Message: ${formData.message}\n\n`;
     }
 
-    text += `\nPlease confirm the availability and booking.\nThank you.`;
+    text += `Please confirm the availability and booking.\n\nThank you.`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/916300943161?text=${encodedText}`;

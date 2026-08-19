@@ -10,6 +10,8 @@ import { RulesAndRegulations } from "@/components/RulesAndRegulations";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 
+import { FloatingCTAs } from "@/components/FloatingCTAs";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -26,7 +28,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans scroll-smooth">
+    <div className="min-h-screen bg-background text-foreground font-sans scroll-smooth relative">
       <Navbar />
       
       <main>
@@ -41,6 +43,7 @@ function Index() {
       </main>
 
       <Footer />
+      <FloatingCTAs />
     </div>
   );
 }

@@ -3,6 +3,12 @@ import sedan from "@/assets/sedan.jpg";
 import hatchback from "@/assets/hatchback.jpg";
 import muv from "@/assets/muv.jpg";
 
+import balenoImg from "@/assets/cars/maruti_suzuki_baleno.jpg";
+import ertigaImg from "@/assets/cars/maruti_suzuki_ertiga.jpg";
+import fronxImg from "@/assets/cars/maruti_suzuki_fronx.jpg";
+import magniteImg from "@/assets/cars/nissan_magnet.jpg";
+import etiosImg from "@/assets/cars/toyota_etios_gd.jpg";
+
 export const business = {
   name: "RK Travels & Self-Drive Cars",
   shortName: "RK Travels",
@@ -73,7 +79,7 @@ export const vehicles: Vehicle[] = [
     id: "r3",
     name: "Toyota Etios DI / GD",
     category: "Sedan",
-    image: "/cars/toyota etios gd.jpg",
+    image: etiosImg,
     badge: "Comfort Ride",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
@@ -86,7 +92,7 @@ export const vehicles: Vehicle[] = [
     id: "r4",
     name: "Maruti Suzuki Baleno",
     category: "Hatchback",
-    image: "/cars/maruti suzuki baleno.jpg",
+    image: balenoImg,
     badge: "Premium Hatchback",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
@@ -99,7 +105,7 @@ export const vehicles: Vehicle[] = [
     id: "r5",
     name: "Nissan Magnite",
     category: "Compact SUV",
-    image: "/cars/nissan magnet.jpg",
+    image: magniteImg,
     badge: "Stylish SUV",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
@@ -112,7 +118,7 @@ export const vehicles: Vehicle[] = [
     id: "r6",
     name: "Maruti Suzuki Fronx",
     category: "Compact SUV",
-    image: "/cars/maruti suzuki fronx.jpg",
+    image: fronxImg,
     badge: "City SUV",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
@@ -138,7 +144,7 @@ export const vehicles: Vehicle[] = [
     id: "r8",
     name: "Maruti Suzuki Ertiga DI",
     category: "MUV",
-    image: "/cars/maruti suzuki ertiga.jpg",
+    image: ertigaImg,
     badge: "Family Choice",
     seats: "7 Seats",
     transmission: "To Be Confirmed",

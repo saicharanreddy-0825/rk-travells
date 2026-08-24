@@ -15,11 +15,11 @@ import { FloatingCTAs } from "@/components/FloatingCTAs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vinayaka Self Drive Cars & Rentals | Hanamkonda, Warangal" },
+      { title: "RK Travels | Self Drive Cars & Car Rentals in Jadcherla" },
       {
         name: "description",
         content:
-          "Self drive car rentals in Hanamkonda, Warangal. Hatchbacks, sedans, SUVs, tempo travellers and buses on rent. Open 24 hours.",
+          "Self drive car rentals in Jadcherla. Hatchbacks, sedans, SUVs on rent. Open 24/7 with affordable packages.",
       },
     ],
   }),

@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,21 +73,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vinayaka Self Drive Cars and Car Rentals" },
+      { title: "RK Travels & Self-Drive Cars" },
       {
         name: "description",
-        content: "Self drive car rentals in Hanamkonda, Warangal. Open 24 hours.",
+        content: "Self drive car rentals in Jadcherla. Open 24/7.",
       },
-      { name: "author", content: "Vinayaka Self Drive Cars and Car Rentals" },
-      { property: "og:title", content: "Vinayaka Self Drive Cars and Car Rentals" },
+      { name: "author", content: "RK Travels & Self-Drive Cars" },
+      { property: "og:title", content: "RK Travels & Self-Drive Cars" },
       {
         property: "og:description",
-        content: "Self drive car rentals in Hanamkonda, Warangal. Open 24 hours.",
+        content: "Self drive car rentals in Jadcherla. Open 24/7.",
       },
 
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -104,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo.png", type: "image/png" },
     ],
 
   }),

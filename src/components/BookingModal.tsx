@@ -30,7 +30,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     returnDate: "",
     pickupTime: "",
     returnTime: "",
-    duration: "12 Hours",
+    duration: "12 Hours / 150 KM",
     pickupLocation: "",
     message: "",
   });
@@ -57,11 +57,14 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     if (!formData.returnDate) return setError("Please select a return date.");
     if (!formData.pickupTime) return setError("Please select a pickup time.");
     if (!formData.returnTime) return setError("Please select a return time.");
-    if (!formData.duration) return setError("Please select a rental duration.");
+    if (!formData.duration) return setError("Please select a rental package.");
 
-    // Determine selected price & limits
-    const price = formData.duration === "12 Hours" ? vehicle.price12h : vehicle.price24h;
-    const limit = formData.duration === "12 Hours" ? vehicle.limit12h : vehicle.limit24h;
+    // Determine selected price
+    const price = formData.duration === "12 Hours / 150 KM" 
+      ? vehicle.price12h150km 
+      : formData.duration === "12 Hours / 300 KM"
+      ? vehicle.price12h300km
+      : vehicle.price24h300km;
 
     // Format Date from YYYY-MM-DD to DD-MM-YYYY
     const formatDate = (dateStr: string) => {
@@ -73,7 +76,9 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     // Format Time from HH:MM to 12-hour AM/PM
     const formatTime = (timeStr: string) => {
       if (!timeStr) return "";
-      const [hourStr, minStr] = timeStr.split(":");
+      const parts = timeStr.split(":");
+      const hourStr = parts[0] || "0";
+      const minStr = parts[1] || "00";
       let hour = parseInt(hourStr, 10);
       const ampm = hour >= 12 ? "PM" : "AM";
       hour = hour % 12;
@@ -83,36 +88,23 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     };
 
     // Replace ₹ with Rs.
-    const formattedPrice = price.replace("₹", "Rs. ");
+    const formattedPrice = price?.replace("₹", "Rs. ") || "";
 
     // Generate WhatsApp Message
-    let text = `Hello Vinayaka Self Drive Cars,\n\nI would like to book a car.\n\n`;
-    text += `Vehicle: ${vehicle.name}\n\n`;
-    text += `Customer Name: ${formData.name}\n`;
-    text += `Phone: ${formData.phone}\n\n`;
-    
-    text += `Pickup Date: ${formatDate(formData.pickupDate)}\n`;
-    text += `Pickup Time: ${formatTime(formData.pickupTime)}\n\n`;
-    
-    text += `Return Date: ${formatDate(formData.returnDate)}\n`;
-    text += `Return Time: ${formatTime(formData.returnTime)}\n\n`;
-    
-    text += `Rental Duration: ${formData.duration}\n\n`;
+    let text = `Hello RK Travels,\n\nI would like to enquire about ${vehicle.name}.\n\n`;
+    text += `Name: ${formData.name}\n`;
+    text += `Phone: ${formData.phone}\n`;
+    text += `Pickup: ${formatDate(formData.pickupDate)} ${formatTime(formData.pickupTime)}\n`;
+    text += `Return: ${formatDate(formData.returnDate)} ${formatTime(formData.returnTime)}\n`;
+    text += `Package: ${formData.duration} (${formattedPrice})\n`;
     if (formData.pickupLocation) {
-      text += `Pickup Location: ${formData.pickupLocation}\n\n`;
-    }
-    
-    text += `Rental Price: ${formattedPrice}\n`;
-    text += `KM Limit: ${limit}\n\n`;
-
-    if (formData.message) {
-      text += `Message: ${formData.message}\n\n`;
+      text += `Pickup Location: ${formData.pickupLocation}\n`;
     }
 
-    text += `Please confirm the availability and booking.\n\nThank you.`;
+    text += `\nPlease confirm availability and booking details.`;
 
     const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/916300943161?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/919121791992?text=${encodedText}`;
 
     window.open(whatsappUrl, "_blank");
   };
@@ -304,34 +296,48 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
 
             {/* Duration / Pricing */}
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-ink ml-1">Rental Duration *</label>
-              <div className="grid grid-cols-2 gap-3">
+              <label className="text-sm font-bold text-ink ml-1">Rental Package *</label>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <button
                   type="button"
-                  onClick={() => handleDurationChange("12 Hours")}
-                  className={`relative p-4 rounded-xl border-2 text-left transition-all flex flex-col items-center justify-center ${
-                    formData.duration === "12 Hours" 
+                  onClick={() => handleDurationChange("12 Hours / 150 KM")}
+                  className={`relative p-3 rounded-xl border-2 text-center transition-all flex flex-col items-center justify-center ${
+                    formData.duration === "12 Hours / 150 KM" 
                       ? "border-primary bg-primary/5 shadow-[0_0_0_1px_rgba(var(--primary),0.1)]" 
                       : "border-gray-100 bg-gray-50 hover:bg-gray-100"
                   }`}
                 >
-                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">12 Hours</span>
-                  <span className={`text-xl font-bold font-display ${formData.duration === "12 Hours" ? "text-primary" : "text-ink"}`}>
-                    {vehicle.price12h}
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">12 Hrs / 150 KM</span>
+                  <span className={`text-lg font-bold font-display ${formData.duration === "12 Hours / 150 KM" ? "text-primary" : "text-ink"}`}>
+                    {vehicle.price12h150km}
                   </span>
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleDurationChange("24 Hours")}
-                  className={`relative p-4 rounded-xl border-2 text-left transition-all flex flex-col items-center justify-center ${
-                    formData.duration === "24 Hours" 
+                  onClick={() => handleDurationChange("12 Hours / 300 KM")}
+                  className={`relative p-3 rounded-xl border-2 text-center transition-all flex flex-col items-center justify-center ${
+                    formData.duration === "12 Hours / 300 KM" 
                       ? "border-primary bg-primary/5 shadow-[0_0_0_1px_rgba(var(--primary),0.1)]" 
                       : "border-gray-100 bg-gray-50 hover:bg-gray-100"
                   }`}
                 >
-                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">24 Hours</span>
-                  <span className={`text-xl font-bold font-display ${formData.duration === "24 Hours" ? "text-primary" : "text-ink"}`}>
-                    {vehicle.price24h}
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">12 Hrs / 300 KM</span>
+                  <span className={`text-lg font-bold font-display ${formData.duration === "12 Hours / 300 KM" ? "text-primary" : "text-ink"}`}>
+                    {vehicle.price12h300km}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleDurationChange("24 Hours / 300 KM")}
+                  className={`relative p-3 rounded-xl border-2 text-center transition-all flex flex-col items-center justify-center ${
+                    formData.duration === "24 Hours / 300 KM" 
+                      ? "border-primary bg-primary/5 shadow-[0_0_0_1px_rgba(var(--primary),0.1)]" 
+                      : "border-gray-100 bg-gray-50 hover:bg-gray-100"
+                  }`}
+                >
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">24 Hrs / 300 KM</span>
+                  <span className={`text-lg font-bold font-display ${formData.duration === "24 Hours / 300 KM" ? "text-primary" : "text-ink"}`}>
+                    {vehicle.price24h300km}
                   </span>
                 </button>
               </div>
@@ -346,7 +352,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
                   name="pickupLocation"
                   value={formData.pickupLocation}
                   onChange={handleInputChange}
-                  placeholder="e.g. Warangal Railway Station"
+                  placeholder="e.g. Jadcherla Railway Station"
                   className="w-full h-12 pl-11 pr-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-gray-400 pointer-events-none" />

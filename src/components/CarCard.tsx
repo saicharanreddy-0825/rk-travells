@@ -47,12 +47,16 @@ export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
         <div className="flex flex-col gap-2 mt-auto">
           <div className="flex justify-between items-end">
             <div className="flex flex-col">
-              <span className="text-sm font-semibold text-ink">12hrs - {vehicle.price12h}</span>
-              <span className="text-xs text-muted-foreground font-medium">limit {vehicle.limit12h}</span>
+              <span className="text-sm font-bold text-ink">12h - {vehicle.price12h150km}</span>
+              <span className="text-[10px] text-muted-foreground font-medium uppercase">Limit 150 KM</span>
+            </div>
+            <div className="flex flex-col text-center">
+              <span className="text-sm font-bold text-ink">{vehicle.price12h300km}</span>
+              <span className="text-[10px] text-muted-foreground font-medium uppercase">Limit 300 KM</span>
             </div>
             <div className="flex flex-col text-right">
-              <span className="text-sm font-semibold text-ink">24hrs - {vehicle.price24h}</span>
-              <span className="text-xs text-muted-foreground font-medium">limit {vehicle.limit24h}</span>
+              <span className="text-sm font-bold text-ink">24h - {vehicle.price24h300km}</span>
+              <span className="text-[10px] text-muted-foreground font-medium uppercase">Limit 300 KM</span>
             </div>
           </div>
         </div>

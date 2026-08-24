@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Phone, Menu, X, Car } from "lucide-react";
+import { Phone, Menu, X, Car, MessageCircle } from "lucide-react";
 import { business } from "@/lib/site-data";
+import logoImg from "@/assets/logo.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,27 +25,19 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white/75 backdrop-blur-md shadow-sm border-b border-white/20 py-3">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
+    <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white/70 backdrop-blur-md shadow-sm border-b border-white/50 h-[70px] flex items-center">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 lg:px-8">
         <a href="#top" className="flex items-center gap-2 font-semibold">
-          <Car className="size-6 text-primary" aria-hidden="true" />
-          <div className="flex flex-col">
-            <span className="font-display text-xl font-bold tracking-tight text-ink leading-none">
-              VINAYAKA
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold mt-0.5">
-              Self Drive & Rentals
-            </span>
-          </div>
+          <img src={logoImg} alt="RK Travels Logo" className="h-[40px] w-[40px] md:h-[50px] md:w-[50px] object-contain" />
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-2 lg:gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-ink/80 hover:text-primary transition-colors"
+              className="text-sm font-medium text-ink/80 hover:text-primary hover:bg-gray-100/50 px-3 py-1.5 rounded-full border border-transparent hover:border-gray-200 transition-all"
             >
               {link.name}
             </a>
@@ -52,17 +45,26 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           <a
             href={business.phoneHref}
-            className="text-sm font-semibold text-ink flex items-center gap-2 hover:text-primary transition-colors"
+            className="text-sm font-semibold text-ink flex items-center gap-2 hover:bg-gray-50 transition-colors border border-gray-200 rounded-full px-4 py-2 bg-white"
           >
-            <Phone className="size-4 text-primary" />
+            <Phone className="size-4 text-yellow-500" />
             {business.phone}
           </a>
           <a
+            href={business.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-bold text-white shadow-sm hover:bg-[#20bd5a] transition-all"
+          >
+            <MessageCircle className="size-4" />
+            WhatsApp
+          </a>
+          <a
             href="#cars"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 transition-all"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-all"
           >
             Book Now
           </a>

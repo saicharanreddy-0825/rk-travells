@@ -37,11 +37,11 @@ export function ImageLightbox({ images, initialIndex, onClose }: ImageLightboxPr
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStart(e.targetTouches[0]?.clientX ?? 0);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0]?.clientX ?? 0);
   };
 
   const onTouchEndEvent = () => {

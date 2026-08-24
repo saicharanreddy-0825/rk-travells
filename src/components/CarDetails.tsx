@@ -117,26 +117,35 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
             <label className="flex items-center justify-between p-4 rounded-2xl border-2 border-primary bg-primary/5 cursor-pointer transition-colors">
               <div className="flex flex-col">
                 <span className="font-bold text-ink">12 Hours Plan</span>
-                <span className="text-sm text-muted-foreground">Up to {vehicle.limit12h}</span>
+                <span className="text-sm text-muted-foreground">Up to 150 KM</span>
               </div>
               <div className="text-right flex flex-col">
-                <span className="font-bold text-primary text-xl">{vehicle.price12h}</span>
+                <span className="font-bold text-primary text-xl">{vehicle.price12h150km}</span>
               </div>
             </label>
-            <label className="flex items-center justify-between p-4 rounded-2xl border-2 border-gray-100 hover:border-gray-200 cursor-pointer transition-colors">
+            <label className="flex items-center justify-between p-4 rounded-2xl border-2 border-gray-100 cursor-pointer transition-colors">
               <div className="flex flex-col">
-                <span className="font-bold text-ink">24 Hours Plan</span>
-                <span className="text-sm text-muted-foreground">Up to {vehicle.limit24h}</span>
+                <span className="font-bold text-ink">12 Hours Plan</span>
+                <span className="text-sm text-muted-foreground">Up to 300 KM</span>
               </div>
               <div className="text-right flex flex-col">
-                <span className="font-bold text-ink text-xl">{vehicle.price24h}</span>
+                <span className="font-bold text-ink text-xl">{vehicle.price12h300km}</span>
+              </div>
+            </label>
+            <label className="flex items-center justify-between p-4 rounded-2xl border-2 border-gray-100 cursor-pointer transition-colors">
+              <div className="flex flex-col">
+                <span className="font-bold text-ink">24 Hours Plan</span>
+                <span className="text-sm text-muted-foreground">Up to 300 KM</span>
+              </div>
+              <div className="text-right flex flex-col">
+                <span className="font-bold text-ink text-xl">{vehicle.price24h300km}</span>
               </div>
             </label>
           </div>
 
           <div className="text-sm text-muted-foreground bg-gray-50 p-4 rounded-xl mb-8 space-y-2">
-            <p>• Extra Hour Charge: <span className="font-semibold text-ink">{vehicle.extraHr}</span></p>
-            <p>• Extra KM Charge: <span className="font-semibold text-ink">{vehicle.extraKm}</span></p>
+            <p>• Prices and availability are subject to confirmation.</p>
+            <p>• Extra kilometre charges apply beyond package limit.</p>
           </div>
 
           <div className="mt-auto flex flex-col sm:flex-row gap-3">
@@ -147,7 +156,7 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
               Book Now
             </button>
             <a
-              href="tel:+916300943161"
+              href="tel:+919121791992"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-6 py-4 font-bold shadow-md hover:bg-primary/90 transition-all hover:-translate-y-0.5"
             >
               Call to Book

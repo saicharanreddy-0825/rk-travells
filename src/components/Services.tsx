@@ -2,14 +2,14 @@ import { Key, Car, Building2, Plane, Map, HeartHandshake, Briefcase, GraduationC
 
 export function Services() {
   const servicesList = [
-    { name: "Self Drive Car Rentals", icon: Key },
-    { name: "Car Rental With Driver", icon: Car },
+    { name: "Self-Drive Car Rentals", icon: Key },
+    { name: "Car Rentals", icon: Car },
     { name: "SUV Rentals", icon: Map },
     { name: "Sedan Rentals", icon: Briefcase },
     { name: "Hatchback Rentals", icon: GraduationCap },
     { name: "Outstation Travel", icon: Plane },
-    { name: "Wedding & Event Cars", icon: HeartHandshake },
-    { name: "Corporate Travel", icon: Building2 },
+    { name: "Family Travel", icon: HeartHandshake },
+    { name: "Pickup & Drop", icon: Building2 },
   ];
 
   return (

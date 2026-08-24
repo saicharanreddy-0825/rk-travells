@@ -1,5 +1,6 @@
 import { business } from "@/lib/site-data";
 import { MessageCircle, Phone, MapPin, Car } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,18 +12,10 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-1">
             <a href="#top" className="flex items-center gap-2 font-semibold mb-6">
-              <Car className="size-8 text-primary" aria-hidden="true" />
-              <div className="flex flex-col">
-                <span className="font-display text-2xl font-bold tracking-tight text-white leading-none">
-                  VINAYAKA
-                </span>
-                <span className="text-xs uppercase tracking-wider text-white/70 font-semibold mt-1">
-                  Self Drive & Rentals
-                </span>
-              </div>
+              <img src={logoImg} alt="RK Travels Logo" className="h-16 object-contain" />
             </a>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Your trusted partner for self-drive cars, outstation travels, and wedding events in Warangal and Hanamkonda.
+              Your trusted partner for self-drive cars, outstation travels, and family trips in Jadcherla.
             </p>
             <div className="flex gap-4">
               <a 
@@ -87,7 +80,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-primary font-semibold text-xs uppercase tracking-wider">Hours</span>
-                <span>{business.hours}</span>
+                <span>Open 24/7</span>
               </li>
             </ul>
             <a
@@ -103,7 +96,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
           <p>© {currentYear} {business.name}. All rights reserved.</p>
-          <p>Made for Hanamkonda & Warangal</p>
+          <p>Made for Jadcherla</p>
         </div>
       </div>
     </footer>

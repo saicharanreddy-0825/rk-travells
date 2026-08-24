@@ -4,13 +4,8 @@ export function WhyChooseUs() {
   const reasons = [
     {
       icon: Clock,
-      title: "24/7 Availability",
-      description: "Pick up or drop off your rental car anytime, day or night. We're always open."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Well Maintained Cars",
-      description: "Every vehicle undergoes strict quality checks before every rental."
+      title: "Multiple Car Options",
+      description: "From hatchbacks to MUVs, we have a car for every need."
     },
     {
       icon: Wallet,
@@ -21,14 +16,19 @@ export function WhyChooseUs() {
       icon: Sparkles,
       title: "Easy Booking",
       description: "Book instantly via WhatsApp or Call. Minimal paperwork required."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Flexible Rental Plans",
+      description: "Choose between 12-hour or 24-hour packages tailored to your trip."
     }
   ];
 
   const benefits = [
     "Transparent pricing",
     "Flexible rental plans",
-    "Wide range of cars",
-    "Customer support"
+    "Multiple car options",
+    "Local support"
   ];
 
   return (
@@ -38,10 +38,10 @@ export function WhyChooseUs() {
       <div className="relative z-10 mx-auto max-w-7xl px-5">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-ink mb-4">
-            Why Choose Vinayaka?
+            Why Choose RK Travels?
           </h2>
           <p className="text-muted-foreground text-lg">
-            Experience the joy of self-drive with Warangal's most trusted car rental service.
+            Experience the joy of self-drive with Jadcherla's most trusted car rental service.
           </p>
         </div>
 

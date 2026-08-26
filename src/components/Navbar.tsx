@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] h-[74px] flex items-center transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] h-[64px] md:h-[74px] flex items-center transition-all duration-300 ${
         isScrolled
           ? "bg-white/85 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border-b border-white/60"
           : "bg-white/70 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-b border-white/50"
@@ -88,13 +88,21 @@ export function Navbar() {
           </a>
         </div>
 
-        <button
-          className="md:hidden p-2 text-ink transition-opacity duration-200 hover:opacity-70"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <a
+            href="#cars"
+            className="inline-flex h-9 items-center justify-center rounded-full bg-primary px-4 text-xs font-bold text-white shadow-sm transition-opacity duration-200 hover:opacity-90"
+          >
+            Book Now
+          </a>
+          <button
+            className="p-2 text-ink transition-opacity duration-200 hover:opacity-70"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {isMobileMenuOpen && (
@@ -107,7 +115,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="relative text-base font-medium text-ink py-2 border-b border-gray-50 transition-opacity duration-200 hover:opacity-70"
+              className="relative text-base font-medium text-ink py-3 border-b border-gray-50 transition-opacity duration-200 hover:opacity-70 active:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -124,7 +132,7 @@ export function Navbar() {
             </div>
             <a
               href={`tel:+91${business.phone}`}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-white px-4 py-2.5 text-sm font-semibold text-primary transition-opacity duration-200 hover:opacity-90"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-white px-4 py-3 text-sm font-semibold text-primary transition-opacity duration-200 hover:opacity-90 active:bg-primary/5"
             >
               Call
             </a>
@@ -132,7 +140,7 @@ export function Navbar() {
               href={business.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90 active:opacity-80"
             >
               WhatsApp
             </a>
@@ -140,7 +148,7 @@ export function Navbar() {
               href={business.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-4 py-3 text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90 active:opacity-80"
             >
               Get Directions
             </a>

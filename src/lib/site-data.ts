@@ -1,12 +1,12 @@
-import balenoCngImg from "@/assets/cars/maruti_suzuki_baleno_cng_petrol.jpg";
-import balenoImg from "@/assets/cars/maruti_suzuki_baleno.jpg";
-import ertigaZdiImg from "@/assets/cars/maruti_suzuki_ertiga_zdi.jpg";
-import ertigaPetrolImg from "@/assets/cars/maruti_suzuki_ertiga_petrol.jpg";
-import fronxImg from "@/assets/cars/maruti_suzuki_fronx.jpg";
-import magniteImg from "@/assets/cars/nissan_magnite_petrol.jpg";
-import etiosImg from "@/assets/cars/toyota_etios.jpg";
-import etiosAltImg from "@/assets/cars/toyota_etios_alt.jpg";
-import venueImg from "@/assets/cars/hyundai_venue.jpg";
+import balenoCngImg from "@/assets/cars/maruti_suzuki_baleno_cng_petrol.jpeg";
+import balenoImg from "@/assets/cars/maruti_suzuki_baleno.jpeg";
+import ertigaZdiImg from "@/assets/cars/maruti_suzuki_ertiga_dci.jpeg";
+import ertigaPetrolImg from "@/assets/cars/maruti_suzuki_ertigaa.jpeg";
+import fronxImg from "@/assets/cars/maruti_suzuki_fronx.jpeg";
+import magniteImg from "@/assets/cars/nissan_magnet.jpeg";
+import etiosImg from "@/assets/cars/toyota_etios.jpeg";
+import etiosAltImg from "@/assets/cars/toyota_etios_alt.jpeg";
+import venueImg from "@/assets/cars/hyundai_venue.jpeg";
 
 export const business = {
   name: "RK Travels & Self-Drive Cars",

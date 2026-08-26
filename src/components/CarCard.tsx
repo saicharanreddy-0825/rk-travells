@@ -11,10 +11,11 @@ export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
   return (
     <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.07)] flex flex-col h-full group">
       {/* Image container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 p-6 flex items-center justify-center">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 p-4 sm:p-6 flex items-center justify-center">
         <img
           src={vehicle.image}
           alt={vehicle.name}
+          loading="lazy"
           className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02]"
         />
         <div className="absolute top-4 left-4">
@@ -25,7 +26,7 @@ export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
         </div>
       </div>
 
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold font-display text-ink">{vehicle.name}</h3>
         
         {/* Specs pills */}
@@ -65,13 +66,13 @@ export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
         <div className="mt-6 flex gap-3">
           <button 
             onClick={() => onViewDetails(vehicle)}
-            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl border-2 border-gray-100 bg-white px-4 text-sm font-semibold text-ink transition-opacity duration-200 hover:opacity-80"
+            className="flex-1 h-12 sm:h-11 inline-flex items-center justify-center rounded-xl border-2 border-gray-100 bg-white px-4 text-sm font-semibold text-ink transition-opacity duration-200 hover:opacity-80 active:bg-gray-50"
           >
             Details
           </button>
           <button
             onClick={() => onBookNow(vehicle)}
-            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm transition-opacity duration-200 hover:opacity-90"
+            className="flex-1 h-12 sm:h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm transition-opacity duration-200 hover:opacity-90 active:opacity-80"
           >
             Book Now
           </button>

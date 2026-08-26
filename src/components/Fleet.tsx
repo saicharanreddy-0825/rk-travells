@@ -16,14 +16,14 @@ export function Fleet() {
   }, [selectedCategory]);
 
   return (
-    <section id="cars" className="py-24 bg-gray-50/50">
+    <section id="cars" className="py-16 sm:py-24 bg-gray-50/50">
       <div className="mx-auto max-w-7xl px-5">
         <CategoryFilter
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {filteredVehicles.map((vehicle) => (
             <div 
               key={vehicle.id} 

@@ -28,10 +28,10 @@ export function RulesAndRegulations() {
   const [language, setLanguage] = useState<"en" | "te">("en");
 
   return (
-    <section className="py-24 bg-white">
+    <section id="rules-regulations" className="py-16 sm:py-24 bg-white">
       <div className="mx-auto max-w-4xl px-5">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold font-display sm:text-4xl text-ink">
+          <h2 className="text-2xl font-bold font-display sm:text-3xl md:text-4xl text-ink">
             Rules and Regulations
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -64,7 +64,7 @@ export function RulesAndRegulations() {
           </div>
         </div>
 
-        <div className="bg-gray-50/80 border border-gray-100 rounded-3xl p-8 sm:p-12 shadow-sm">
+        <div className="bg-gray-50/80 border border-gray-100 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-sm">
           <ul className="space-y-6">
             {(language === "en" ? englishRules : teluguRules).map((rule, index) => (
               <li key={index} className="flex gap-4">

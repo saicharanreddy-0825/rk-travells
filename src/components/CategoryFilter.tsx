@@ -15,12 +15,12 @@ export function CategoryFilter({ selectedCategory, onSelectCategory }: CategoryF
   return (
     <div className="flex flex-col items-center">
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-ink mb-3">Choose Your Ride</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-ink mb-3">Choose Your Ride</h2>
         <p className="text-muted-foreground text-lg">Find the perfect vehicle for your journey.</p>
       </div>
       
       <div className="w-full overflow-x-auto hide-scrollbar py-2">
-        <div className="flex items-center justify-center min-w-max gap-3 px-4">
+        <div className="flex items-center sm:justify-center min-w-max gap-2 sm:gap-3 px-4">
           {categories.map((category) => (
             <button
               key={category}

@@ -3,16 +3,16 @@ import { business } from "@/lib/site-data";
 
 export function Reviews() {
   return (
-    <section className="py-24 bg-gray-50/50">
+    <section className="py-16 sm:py-24 bg-gray-50/50">
       <div className="mx-auto max-w-4xl px-5 text-center">
-        <h2 className="text-3xl font-bold font-display sm:text-4xl text-ink">
+        <h2 className="text-2xl font-bold font-display sm:text-3xl md:text-4xl text-ink">
           Customer Experiences
         </h2>
         <p className="mt-4 text-lg text-muted-foreground mb-12">
           We value your feedback. Had a great trip with RK Travels? Let us know!
         </p>
 
-        <div className="bg-white rounded-3xl p-10 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-center">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-center">
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
             <MessageSquarePlus className="size-8" />
           </div>

@@ -28,16 +28,17 @@ export function WhyChooseUs() {
     "Transparent pricing",
     "Flexible rental plans",
     "Multiple car options",
-    "Local support"
+    "Local support",
+    "Driver also available"
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-white relative overflow-hidden">
+    <section id="why-us" className="py-16 sm:py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
       
       <div className="relative z-10 mx-auto max-w-7xl px-5">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-ink mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-ink mb-4">
             Why Choose RK Travels?
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -49,7 +50,7 @@ export function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <div 
               key={index}
-              className="bg-gray-50 border border-gray-100 p-8 rounded-3xl transition-transform hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/50"
+              className="bg-gray-50 border border-gray-100 p-6 sm:p-8 rounded-3xl transition-transform hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-200/50"
             >
               <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                 <reason.icon className="size-7 text-primary" />
@@ -62,7 +63,7 @@ export function WhyChooseUs() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-6 md:gap-10">
+        <div className="mt-10 sm:mt-16 flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-center gap-2">
               <CheckCircle2 className="size-5 text-accent" />

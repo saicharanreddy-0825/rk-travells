@@ -2,26 +2,26 @@ import { business } from "@/lib/site-data";
 
 export function About() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 flex flex-col lg:flex-row gap-12 items-center">
         <div className="w-full lg:w-1/2 relative">
-          <div className="absolute inset-0 bg-primary/10 rounded-[3rem] transform translate-x-4 translate-y-4"></div>
-          <div className="relative bg-gray-50 rounded-[3rem] p-10 sm:p-14 border border-gray-100">
+          <div className="absolute inset-0 bg-primary/10 rounded-[2rem] sm:rounded-[3rem] transform translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4"></div>
+          <div className="relative bg-gray-50 rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 md:p-14 border border-gray-100">
             <div className="grid grid-cols-2 gap-8">
               <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">100%</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-primary mb-2">100%</span>
                 <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Quality Assured</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">24/7</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-primary mb-2">24/7</span>
                 <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Customer Support</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">8+</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-primary mb-2">8+</span>
                 <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Vehicle Models</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl font-bold font-display text-primary mb-2">100%</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-primary mb-2">100%</span>
                 <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Customer Focus</span>
               </div>
             </div>
@@ -29,7 +29,7 @@ export function About() {
         </div>
 
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-ink mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-ink mb-6">
             About {business.shortName}
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">

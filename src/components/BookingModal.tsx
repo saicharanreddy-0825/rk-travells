@@ -158,14 +158,14 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-ink/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-ink/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div 
         className="fixed inset-0" 
         onClick={onClose}
         aria-hidden="true"
       />
       
-      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-4xl bg-white rounded-t-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[95vh] sm:max-h-[90vh] animate-in zoom-in-95 duration-300">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 z-20 p-2 bg-gray-100/80 hover:bg-gray-200 rounded-full shadow-sm transition-colors text-ink"
@@ -244,7 +244,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
         </div>
 
         {/* Right: Booking Form */}
-        <div className="w-full md:w-3/5 p-6 sm:p-8 flex flex-col overflow-y-auto">
+        <div className="w-full md:w-3/5 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto">
           <h3 className="text-2xl font-bold font-display mb-2 text-ink">Book {vehicle.name}</h3>
           <p className="text-sm text-muted-foreground mb-6">Fill in your trip details to confirm availability via WhatsApp.</p>
           
@@ -260,7 +260,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Your full name"
-                  className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base"
                 />
               </div>
               <div className="space-y-1.5">
@@ -271,7 +271,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="e.g. 9876543210"
-                  className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base"
                 />
               </div>
             </div>
@@ -394,7 +394,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
                   value={formData.pickupLocation}
                   onChange={handleInputChange}
                   placeholder="e.g. Jadcherla Railway Station"
-                  className="w-full h-12 pl-11 pr-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full h-12 pl-11 pr-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base"
                 />
                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-gray-400 pointer-events-none" />
               </div>

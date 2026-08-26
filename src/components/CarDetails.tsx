@@ -25,14 +25,14 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
     : [vehicle.image];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-ink/40 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-ink/40 backdrop-blur-sm animate-in fade-in duration-200">
       <div 
         className="fixed inset-0" 
         onClick={onClose}
         aria-hidden="true"
       />
       
-      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-4xl bg-white rounded-none sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[100vh] sm:max-h-[90vh] animate-in zoom-in-95 duration-300">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white rounded-full shadow-sm transition-colors text-ink"
@@ -41,7 +41,7 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
         </button>
 
         {/* Left: Image & Title */}
-        <div className="w-full md:w-1/2 bg-gray-50 p-8 flex flex-col justify-center relative border-r border-gray-100 overflow-y-auto">
+        <div className="w-full md:w-1/2 bg-gray-50 p-4 sm:p-6 md:p-8 flex flex-col justify-center relative border-r border-gray-100 overflow-y-auto">
           <div className="mb-8">
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full mb-2">
               {vehicle.category}
@@ -110,7 +110,7 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
         </div>
 
         {/* Right: Booking Options */}
-        <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col overflow-y-auto">
+        <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto">
           <h3 className="text-xl font-bold font-display mb-6 border-b border-gray-100 pb-4">Rental Options</h3>
           
           <div className="space-y-4 mb-8">

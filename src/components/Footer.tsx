@@ -12,7 +12,11 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-1">
             <a href="#top" className="flex items-center gap-2 font-semibold mb-6">
-              <img src={logoImg} alt="RK Travels Logo" className="h-16 object-contain" />
+              <img
+                src={logoImg}
+                alt="RK Travels Logo"
+                className="h-20 w-auto max-w-[220px] object-contain"
+              />
             </a>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Your trusted partner for self-drive cars, outstation travels, and family trips in Jadcherla.

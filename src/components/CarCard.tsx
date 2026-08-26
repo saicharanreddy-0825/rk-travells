@@ -9,13 +9,13 @@ interface CarCardProps {
 
 export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
   return (
-    <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 flex flex-col h-full group">
+    <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.07)] flex flex-col h-full group">
       {/* Image container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 p-6 flex items-center justify-center">
         <img
           src={vehicle.image}
           alt={vehicle.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02]"
         />
         <div className="absolute top-4 left-4">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/20 border border-accent/30 text-ink px-3 py-1.5 text-xs font-semibold backdrop-blur-md">
@@ -65,13 +65,13 @@ export function CarCard({ vehicle, onViewDetails, onBookNow }: CarCardProps) {
         <div className="mt-6 flex gap-3">
           <button 
             onClick={() => onViewDetails(vehicle)}
-            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl border-2 border-gray-100 bg-white px-4 text-sm font-semibold text-ink hover:border-gray-200 hover:bg-gray-50 transition-colors"
+            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl border-2 border-gray-100 bg-white px-4 text-sm font-semibold text-ink transition-opacity duration-200 hover:opacity-80"
           >
             Details
           </button>
           <button
             onClick={() => onBookNow(vehicle)}
-            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm hover:bg-accent/90 hover:-translate-y-0.5 transition-all"
+            className="flex-1 h-11 inline-flex items-center justify-center rounded-xl bg-accent px-4 text-sm font-bold text-ink shadow-sm transition-opacity duration-200 hover:opacity-90"
           >
             Book Now
           </button>

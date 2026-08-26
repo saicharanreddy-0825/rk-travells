@@ -8,7 +8,7 @@ export function FloatingCTAs() {
         href={business.mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-opacity duration-200 hover:opacity-90"
         style={{ backgroundColor: "#C99445" }}
         aria-label="Location"
       >
@@ -17,7 +17,7 @@ export function FloatingCTAs() {
       
       <a
         href={`tel:+91${business.phone}`}
-        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-opacity duration-200 hover:opacity-90"
         style={{ backgroundColor: "#2563EB" }}
         aria-label="Call"
       >
@@ -28,7 +28,7 @@ export function FloatingCTAs() {
         href={business.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-opacity duration-200 hover:opacity-90"
         style={{ backgroundColor: "#25D366" }}
         aria-label="WhatsApp"
       >

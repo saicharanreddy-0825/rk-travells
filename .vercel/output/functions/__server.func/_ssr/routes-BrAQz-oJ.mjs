@@ -1,13 +1,17 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { C as Calendar, E as Award, S as Car, T as Briefcase, _ as Fuel, a as ShieldCheck, b as ChevronRight, c as Phone, d as Menu, f as Map, g as GraduationCap, h as HeartHandshake, i as Sparkles, l as MessageSquarePlus, m as Key, n as Wallet, o as Settings2, p as MapPin, r as Users, s as Plane, t as X, u as MessageCircle, v as Clock, w as Building2, x as ChevronLeft, y as CircleCheck } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-ERzNlgW9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BrAQz-oJ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var suv_default = "/assets/suv-CCthJks6.jpg";
 var sedan_default = "/assets/sedan-Dx8GV8LN.jpg";
 var hatchback_default = "/assets/hatchback-CLhPQFph.jpg";
-var muv_default = "/assets/muv-C9Z4IdCf.jpg";
+var maruti_suzuki_baleno_default = "/assets/maruti_suzuki_baleno-BnsC8hma.jpg";
+var maruti_suzuki_ertiga_default = "/assets/maruti_suzuki_ertiga-lF2CqFK1.jpg";
+var maruti_suzuki_fronx_default = "/assets/maruti_suzuki_fronx-CokP8LQW.jpg";
+var nissan_magnet_default = "/assets/nissan_magnet-BwIuSVxt.jpg";
+var toyota_etios_gd_default = "/assets/toyota_etios_gd-DvIDCDMF.jpg";
 var business = {
 	name: "RK Travels & Self-Drive Cars",
 	shortName: "RK Travels",
@@ -66,7 +70,7 @@ var vehicles = [
 		id: "r3",
 		name: "Toyota Etios DI / GD",
 		category: "Sedan",
-		image: sedan_default,
+		image: toyota_etios_gd_default,
 		badge: "Comfort Ride",
 		seats: "5 Seats",
 		transmission: "To Be Confirmed",
@@ -79,7 +83,7 @@ var vehicles = [
 		id: "r4",
 		name: "Maruti Suzuki Baleno",
 		category: "Hatchback",
-		image: hatchback_default,
+		image: maruti_suzuki_baleno_default,
 		badge: "Premium Hatchback",
 		seats: "5 Seats",
 		transmission: "To Be Confirmed",
@@ -92,7 +96,7 @@ var vehicles = [
 		id: "r5",
 		name: "Nissan Magnite",
 		category: "Compact SUV",
-		image: suv_default,
+		image: nissan_magnet_default,
 		badge: "Stylish SUV",
 		seats: "5 Seats",
 		transmission: "To Be Confirmed",
@@ -105,7 +109,7 @@ var vehicles = [
 		id: "r6",
 		name: "Maruti Suzuki Fronx",
 		category: "Compact SUV",
-		image: suv_default,
+		image: maruti_suzuki_fronx_default,
 		badge: "City SUV",
 		seats: "5 Seats",
 		transmission: "To Be Confirmed",
@@ -131,7 +135,7 @@ var vehicles = [
 		id: "r8",
 		name: "Maruti Suzuki Ertiga DI",
 		category: "MUV",
-		image: muv_default,
+		image: maruti_suzuki_ertiga_default,
 		badge: "Family Choice",
 		seats: "7 Seats",
 		transmission: "To Be Confirmed",

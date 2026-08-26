@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { X, Calendar, Clock, MapPin, Users, Settings2, Fuel } from "lucide-react";
-import { Vehicle } from "@/lib/site-data";
+import { X, Calendar, Clock, MapPin, Users, Fuel } from "lucide-react";
+import { Vehicle, business } from "@/lib/site-data";
 import { ImageLightbox } from "./ImageLightbox";
 
 interface BookingModalProps {
@@ -37,14 +37,62 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
 
   const [error, setError] = useState("");
 
+  const getPackageHours = (duration: string) =>
+    duration.startsWith("24") ? 24 : 12;
+
+  const addHoursToDateTime = (dateStr: string, timeStr: string, hours: number) => {
+    if (!dateStr || !timeStr) return null;
+    const [year, month, day] = dateStr.split("-").map(Number);
+    const [hour, minute] = timeStr.split(":").map(Number);
+    const dt = new Date(year, month - 1, day, hour, minute);
+    dt.setHours(dt.getHours() + hours);
+    const pad = (n: number) => n.toString().padStart(2, "0");
+    return {
+      date: `${dt.getFullYear()}-${pad(dt.getMonth() + 1)}-${pad(dt.getDate())}`,
+      time: `${pad(dt.getHours())}:${pad(dt.getMinutes())}`,
+    };
+  };
+
+  const applyReturnFromPickup = (
+    pickupDate: string,
+    pickupTime: string,
+    duration: string
+  ) => {
+    const result = addHoursToDateTime(
+      pickupDate,
+      pickupTime,
+      getPackageHours(duration)
+    );
+    if (!result) return {};
+    return { returnDate: result.date, returnTime: result.time };
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    setError(""); // clear error on typing
+    setFormData((prev) => {
+      const next = { ...prev, [name]: value };
+      if (name === "pickupDate" || name === "pickupTime") {
+        Object.assign(
+          next,
+          applyReturnFromPickup(
+            name === "pickupDate" ? value : next.pickupDate,
+            name === "pickupTime" ? value : next.pickupTime,
+            next.duration || "12 Hours / 150 KM"
+          )
+        );
+        if (!next.duration) next.duration = "12 Hours / 150 KM";
+      }
+      return next;
+    });
+    setError("");
   };
 
   const handleDurationChange = (duration: string) => {
-    setFormData((prev) => ({ ...prev, duration }));
+    setFormData((prev) => ({
+      ...prev,
+      duration,
+      ...applyReturnFromPickup(prev.pickupDate, prev.pickupTime, duration),
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -104,7 +152,7 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
     text += `\nPlease confirm availability and booking details.`;
 
     const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/919121791992?text=${encodedText}`;
+    const whatsappUrl = `${business.whatsapp}?text=${encodedText}`;
 
     window.open(whatsappUrl, "_blank");
   };
@@ -182,13 +230,6 @@ export function BookingModal({ vehicle, onClose }: BookingModalProps) {
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase text-muted-foreground font-semibold">Seats</span>
                   <span className="text-sm font-bold">{vehicle.seats}</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                <Settings2 className="size-5 text-primary shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase text-muted-foreground font-semibold">Transmission</span>
-                  <span className="text-sm font-bold">{vehicle.transmission}</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 bg-white rounded-2xl border border-gray-100 shadow-sm">

@@ -31,7 +31,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={business.phoneHref}
-              className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-semibold text-white shadow-lg hover:bg-primary/90 transition-all hover:scale-105"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-semibold text-white shadow-lg transition-opacity duration-200 hover:opacity-90"
             >
               Book by Phone
             </a>

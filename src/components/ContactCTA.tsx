@@ -18,13 +18,13 @@ export function ContactCTA() {
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-12">
           <a
             href={`tel:+91${business.phone}`}
-            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl hover:scale-105 transition-transform"
+            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl transition-opacity duration-200 hover:opacity-90"
           >
             <Phone className="size-5" /> Call {business.phone}
           </a>
           <a
             href={`tel:+91${business.additionalPhone}`}
-            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl hover:scale-105 transition-transform"
+            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-white px-8 text-lg font-bold text-ink shadow-xl transition-opacity duration-200 hover:opacity-90"
           >
             <Phone className="size-5" /> Call {business.additionalPhone}
           </a>
@@ -32,7 +32,7 @@ export function ContactCTA() {
             href={business.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-lg font-bold text-white shadow-xl hover:scale-105 transition-transform"
+            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 text-lg font-bold text-white shadow-xl transition-opacity duration-200 hover:opacity-90"
           >
             <MessageCircle className="size-5" /> WhatsApp
           </a>
@@ -40,7 +40,7 @@ export function ContactCTA() {
             href={business.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-ink px-8 text-lg font-bold text-white shadow-xl border border-white/20 hover:scale-105 transition-transform"
+            className="w-full sm:w-auto inline-flex h-14 items-center justify-center gap-3 rounded-full bg-ink px-8 text-lg font-bold text-white shadow-xl border border-white/20 transition-opacity duration-200 hover:opacity-90"
           >
             <MapPin className="size-5" /> Get Directions
           </a>

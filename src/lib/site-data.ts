@@ -1,13 +1,12 @@
-import suv from "@/assets/suv.jpg";
-import sedan from "@/assets/sedan.jpg";
-import hatchback from "@/assets/hatchback.jpg";
-import muv from "@/assets/muv.jpg";
-
+import balenoCngImg from "@/assets/cars/maruti_suzuki_baleno_cng_petrol.jpg";
 import balenoImg from "@/assets/cars/maruti_suzuki_baleno.jpg";
-import ertigaImg from "@/assets/cars/maruti_suzuki_ertiga.jpg";
+import ertigaZdiImg from "@/assets/cars/maruti_suzuki_ertiga_zdi.jpg";
+import ertigaPetrolImg from "@/assets/cars/maruti_suzuki_ertiga_petrol.jpg";
 import fronxImg from "@/assets/cars/maruti_suzuki_fronx.jpg";
-import magniteImg from "@/assets/cars/nissan_magnet.jpg";
-import etiosImg from "@/assets/cars/toyota_etios_gd.jpg";
+import magniteImg from "@/assets/cars/nissan_magnite_petrol.jpg";
+import etiosImg from "@/assets/cars/toyota_etios.jpg";
+import etiosAltImg from "@/assets/cars/toyota_etios_alt.jpg";
+import venueImg from "@/assets/cars/hyundai_venue.jpg";
 
 export const business = {
   name: "RK Travels & Self-Drive Cars",
@@ -15,10 +14,11 @@ export const business = {
   phone: "9121791992",
   additionalPhone: "9177340016",
   phoneHref: "tel:+919121791992",
-  whatsapp: "https://wa.me/919121791992",
+  whatsapp: "https://wa.me/919177340016",
   area: "Jadcherla, Telangana",
   address: "Road No. 03, Vijay Nagar Colony, Jadcherla, Telangana, India",
-  mapsUrl: "https://maps.google.com/?q=Jadcherla",
+  mapsUrl:
+    "https://www.google.com/maps/place/RK+TRAVELS+%26+SELF+DRIVE+CARS/@16.7755409,78.1285551,17z/data=!4m6!3m5!1s0x3bca31006604a377:0x65551727590e9ccc!8m2!3d16.7755406!4d78.1285523!16s%2Fg%2F11yg405mxb?hl=en&entry=ttu&g_ep=EgoyMDI2MDgyNC4wIKXMDSoASAFQAw%3D%3D",
   dealsIn: [
     "Self Drive Cars",
     "Car Rentals",
@@ -48,36 +48,39 @@ export type Vehicle = {
   gallery?: string[];
 };
 
+/** Fleet cards — names & images match files in /cars. Prices are placeholders. */
 export const vehicles: Vehicle[] = [
   {
-    id: "r1",
-    name: "Maruti Suzuki Swift DI",
+    id: "baleno-cng",
+    name: "Maruti Suzuki Baleno",
     category: "Hatchback",
-    image: hatchback,
+    image: balenoCngImg,
     badge: "Easy City Drive",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
-    fuel: "Diesel",
-    price12h150km: "₹1,200",
-    price12h300km: "₹1,600",
-    price24h300km: "₹2,000",
+    fuel: "CNG / Petrol",
+    price12h150km: "₹1,400",
+    price12h300km: "₹2,000",
+    price24h300km: "₹2,400",
+    gallery: [balenoCngImg, balenoImg],
   },
   {
-    id: "r2",
-    name: "Maruti Suzuki Swift Dzire DI",
-    category: "Sedan",
-    image: sedan,
-    badge: "Comfort Ride",
+    id: "baleno",
+    name: "Maruti Suzuki Baleno",
+    category: "Hatchback",
+    image: balenoImg,
+    badge: "Premium Hatchback",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
-    fuel: "Diesel",
-    price12h150km: "₹1,200",
-    price12h300km: "₹1,800",
-    price24h300km: "₹2,200",
+    fuel: "Petrol",
+    price12h150km: "₹1,400",
+    price12h300km: "₹2,000",
+    price24h300km: "₹2,400",
+    gallery: [balenoImg, balenoCngImg],
   },
   {
-    id: "r3",
-    name: "Toyota Etios DI / GD",
+    id: "etios-1",
+    name: "Toyota Etios",
     category: "Sedan",
     image: etiosImg,
     badge: "Comfort Ride",
@@ -87,22 +90,24 @@ export const vehicles: Vehicle[] = [
     price12h150km: "₹1,200",
     price12h300km: "₹1,800",
     price24h300km: "₹2,200",
+    gallery: [etiosImg, etiosAltImg],
   },
   {
-    id: "r4",
-    name: "Maruti Suzuki Baleno",
-    category: "Hatchback",
-    image: balenoImg,
-    badge: "Premium Hatchback",
+    id: "etios-2",
+    name: "Toyota Etios",
+    category: "Sedan",
+    image: etiosAltImg,
+    badge: "Comfort Ride",
     seats: "5 Seats",
     transmission: "To Be Confirmed",
-    fuel: "CNG / Petrol",
-    price12h150km: "₹1,400",
-    price12h300km: "₹2,000",
-    price24h300km: "₹2,400",
+    fuel: "Diesel",
+    price12h150km: "₹1,200",
+    price12h300km: "₹1,800",
+    price24h300km: "₹2,200",
+    gallery: [etiosAltImg, etiosImg],
   },
   {
-    id: "r5",
+    id: "magnite",
     name: "Nissan Magnite",
     category: "Compact SUV",
     image: magniteImg,
@@ -115,7 +120,7 @@ export const vehicles: Vehicle[] = [
     price24h300km: "₹2,500",
   },
   {
-    id: "r6",
+    id: "fronx",
     name: "Maruti Suzuki Fronx",
     category: "Compact SUV",
     image: fronxImg,
@@ -128,23 +133,10 @@ export const vehicles: Vehicle[] = [
     price24h300km: "₹2,800",
   },
   {
-    id: "r7",
-    name: "Hyundai Venue",
-    category: "Compact SUV",
-    image: suv,
-    badge: "Comfortable SUV",
-    seats: "5 Seats",
-    transmission: "To Be Confirmed",
-    fuel: "Petrol",
-    price12h150km: "₹1,800",
-    price12h300km: "₹2,500",
-    price24h300km: "₹3,000",
-  },
-  {
-    id: "r8",
-    name: "Maruti Suzuki Ertiga DI",
+    id: "ertiga-zdi",
+    name: "Maruti Suzuki Ertiga",
     category: "MUV",
-    image: ertigaImg,
+    image: ertigaZdiImg,
     badge: "Family Choice",
     seats: "7 Seats",
     transmission: "To Be Confirmed",
@@ -152,5 +144,33 @@ export const vehicles: Vehicle[] = [
     price12h150km: "₹2,000",
     price12h300km: "₹3,000",
     price24h300km: "₹3,500",
+    gallery: [ertigaZdiImg, ertigaPetrolImg],
+  },
+  {
+    id: "ertiga-petrol",
+    name: "Maruti Suzuki Ertiga",
+    category: "MUV",
+    image: ertigaPetrolImg,
+    badge: "Family Choice",
+    seats: "7 Seats",
+    transmission: "To Be Confirmed",
+    fuel: "Petrol",
+    price12h150km: "₹2,000",
+    price12h300km: "₹3,000",
+    price24h300km: "₹3,500",
+    gallery: [ertigaPetrolImg, ertigaZdiImg],
+  },
+  {
+    id: "venue",
+    name: "Hyundai Venue",
+    category: "Compact SUV",
+    image: venueImg,
+    badge: "Comfortable SUV",
+    seats: "5 Seats",
+    transmission: "To Be Confirmed",
+    fuel: "Petrol",
+    price12h150km: "₹1,800",
+    price12h300km: "₹2,500",
+    price24h300km: "₹3,000",
   },
 ];

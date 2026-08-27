@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import { business } from "@/lib/site-data";
 
 export function ContactCTA() {
@@ -37,6 +37,12 @@ export function ContactCTA() {
             className="w-full sm:w-auto inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 rounded-full bg-ink px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl border border-white/20 transition-opacity duration-200 hover:opacity-90 active:opacity-80"
           >
             <MapPin className="size-5" /> Get Directions
+          </a>
+          <a
+            href={`mailto:${business.email}`}
+            className="w-full sm:w-auto inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 rounded-full bg-white/20 px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl border border-white/20 transition-opacity duration-200 hover:opacity-90 active:opacity-80 backdrop-blur-sm"
+          >
+            <Mail className="size-5" /> Email Us
           </a>
         </div>
         

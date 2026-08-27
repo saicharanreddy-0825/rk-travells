@@ -13,6 +13,7 @@ export const business = {
   shortName: "RK Travels",
   phone: "9177340016",
   phoneHref: "tel:+919177340016",
+  email: "rktravelsselfdrivecars@gmail.com",
   whatsapp: "https://wa.me/919177340016",
   area: "Jadcherla, Telangana",
   address: "Road No. 03, Vijay Nagar Colony, Jadcherla, Telangana, India",

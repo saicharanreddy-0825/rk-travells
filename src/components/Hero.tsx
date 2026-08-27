@@ -9,7 +9,8 @@ export function Hero() {
       <img
         src={rkBannerImg}
         alt="RK Travels Banner"
-        className="absolute inset-0 w-full h-full object-cover object-bottom"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 65%" }}
       />
 
       {/* Left-side gradient for text readability */}

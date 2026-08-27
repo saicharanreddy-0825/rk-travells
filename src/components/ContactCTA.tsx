@@ -17,16 +17,10 @@ export function ContactCTA() {
         
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-12">
           <a
-            href={`tel:+91${business.phone}`}
+            href={business.phoneHref}
             className="w-full sm:w-auto inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 rounded-full bg-white px-6 sm:px-8 text-base sm:text-lg font-bold text-ink shadow-xl transition-opacity duration-200 hover:opacity-90 active:opacity-80"
           >
             <Phone className="size-5" /> Call {business.phone}
-          </a>
-          <a
-            href={`tel:+91${business.additionalPhone}`}
-            className="w-full sm:w-auto inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 rounded-full bg-white px-6 sm:px-8 text-base sm:text-lg font-bold text-ink shadow-xl transition-opacity duration-200 hover:opacity-90 active:opacity-80"
-          >
-            <Phone className="size-5" /> Call {business.additionalPhone}
           </a>
           <a
             href={business.whatsapp}
@@ -49,7 +43,7 @@ export function ContactCTA() {
         <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-white/90 bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <Phone className="size-5 text-accent shrink-0" />
-            <span className="font-semibold">{business.phone} <span className="font-normal opacity-75 hidden sm:inline-block">/</span> {business.additionalPhone}</span>
+            <span className="font-semibold">{business.phone}</span>
           </div>
           <div className="hidden sm:block w-px h-6 bg-white/20"></div>
           <a

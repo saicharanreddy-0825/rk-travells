@@ -79,7 +79,6 @@ export function Footer() {
                 <Phone className="size-5 text-primary shrink-0" />
                 <div className="flex flex-col gap-1">
                   <a href={business.phoneHref} className="hover:text-primary transition-colors">{business.phone}</a>
-                  <a href={`tel:+91${business.additionalPhone}`} className="hover:text-primary transition-colors">{business.additionalPhone}</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">

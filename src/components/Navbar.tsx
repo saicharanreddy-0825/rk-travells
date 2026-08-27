@@ -123,15 +123,12 @@ export function Navbar() {
           ))}
           <div className="relative flex flex-col gap-3 mt-3">
             <div className="flex flex-col gap-2 mb-1 px-1 text-base font-semibold text-ink">
-              <a href={`tel:+91${business.phone}`} className="flex items-center gap-3 py-1">
+              <a href={business.phoneHref} className="flex items-center gap-3 py-1">
                 <Phone className="size-4 text-ink/70" /> {business.phone}
-              </a>
-              <a href={`tel:+91${business.additionalPhone}`} className="flex items-center gap-3 py-1">
-                <Phone className="size-4 text-ink/70" /> {business.additionalPhone}
               </a>
             </div>
             <a
-              href={`tel:+91${business.phone}`}
+              href={business.phoneHref}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary bg-white px-4 py-3 text-sm font-semibold text-primary transition-opacity duration-200 hover:opacity-90 active:bg-primary/5"
             >
               Call

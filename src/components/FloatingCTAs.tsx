@@ -16,7 +16,7 @@ export function FloatingCTAs() {
       </a>
       
       <a
-        href={`tel:+91${business.phone}`}
+        href={business.phoneHref}
         className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-opacity duration-200 hover:opacity-90 active:scale-95"
         style={{ backgroundColor: "#2563EB" }}
         aria-label="Call"

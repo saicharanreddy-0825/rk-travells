@@ -47,8 +47,7 @@ export function About() {
             </a>
             <h3 className="font-bold text-ink mb-2">Phone</h3>
             <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-              <a href={`tel:+91${business.phone}`} className="hover:text-primary transition-colors">+91 {business.phone}</a>
-              <a href={`tel:+91${business.additionalPhone}`} className="hover:text-primary transition-colors">+91 {business.additionalPhone}</a>
+              <a href={business.phoneHref} className="hover:text-primary transition-colors">+91 {business.phone}</a>
             </div>
           </div>
           <a

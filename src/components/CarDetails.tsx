@@ -1,5 +1,5 @@
 import { X, Users, Settings2, Fuel } from "lucide-react";
-import { Vehicle } from "@/lib/site-data";
+import { Vehicle, business } from "@/lib/site-data";
 import { useEffect, useState } from "react";
 import { ImageLightbox } from "./ImageLightbox";
 
@@ -156,7 +156,7 @@ export function CarDetails({ vehicle, onClose, onBookNow }: CarDetailsProps) {
               Book Now
             </button>
             <a
-              href="tel:+919121791992"
+              href={business.phoneHref}
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-6 py-4 font-bold shadow-md hover:bg-primary/90 transition-all hover:-translate-y-0.5"
             >
               Call to Book

@@ -4,44 +4,53 @@ import { business } from "@/lib/site-data";
 
 export function Hero() {
   return (
-    <section id="top" className="relative mt-[64px] md:mt-[74px] min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-74px)] overflow-hidden flex flex-col">
-      {/* Banner Image — fills the section, crops intelligently per screen */}
-      <div className="relative w-full flex-1 min-h-0">
-        <img
-          src={rkBannerImg}
-          alt="RK Travels Banner"
-          className="w-full h-full object-cover object-bottom sm:object-center"
-          style={{ minHeight: "300px" }}
-        />
-        {/* Subtle bottom gradient so the CTA bar blends in */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink/90 to-transparent" />
-      </div>
+    <section id="top" className="relative mt-[64px] md:mt-[74px] overflow-hidden">
+      {/* Banner image — no extra space, flush with navbar */}
+      <img
+        src={rkBannerImg}
+        alt="RK Travels Banner"
+        className="w-full h-auto block"
+      />
 
-      {/* Bottom bar with badges + CTAs */}
-      <div className="relative z-10 bg-ink px-5 py-5 sm:py-6">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Trust badges */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5 text-[10px] sm:text-xs md:text-sm font-bold text-accent uppercase tracking-wider">
-            <span className="flex items-center gap-1.5"><ShieldCheck className="size-3 sm:size-4" /> Claimed & Verified</span>
-            <span className="flex items-center gap-1.5"><Award className="size-3 sm:size-4" /> Best in Jadcherla</span>
-            <span className="flex items-center gap-1.5"><Clock className="size-3 sm:size-4" /> Open 24/7</span>
-            <span className="flex items-center gap-1.5"><User className="size-3 sm:size-4" /> Driver Available</span>
-          </div>
+      {/* Text overlay — visible on mobile, hidden on desktop where banner text is enough */}
+      <div className="absolute inset-0 flex flex-col justify-end sm:justify-center">
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/60 to-ink/20 sm:bg-gradient-to-r sm:from-ink/85 sm:via-ink/50 sm:to-transparent" />
 
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <a
-              href={business.phoneHref}
-              className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full bg-primary px-8 text-sm sm:text-base font-semibold text-white shadow-lg transition-opacity duration-200 hover:opacity-90 active:opacity-80 w-full sm:w-auto"
-            >
-              Book by Phone
-            </a>
-            <a
-              href="#cars"
-              className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full bg-white px-8 text-sm sm:text-base font-semibold text-ink shadow-lg hover:bg-gray-50 transition-all active:bg-gray-100 w-full sm:w-auto"
-            >
-              View Cars & Pricing
-            </a>
+        <div className="relative z-10 px-5 pb-6 sm:pb-0 mx-auto w-full max-w-7xl">
+          <div className="max-w-2xl text-white">
+            <div className="flex flex-wrap gap-2 sm:gap-4 mb-3 sm:mb-5 text-[10px] sm:text-xs md:text-sm font-bold text-accent uppercase tracking-wider">
+              <span className="flex items-center gap-1 sm:gap-1.5"><ShieldCheck className="size-3 sm:size-4" /> Claimed & Verified</span>
+              <span className="flex items-center gap-1 sm:gap-1.5"><Award className="size-3 sm:size-4" /> Best in Jadcherla</span>
+              <span className="flex items-center gap-1 sm:gap-1.5"><Clock className="size-3 sm:size-4" /> Open 24/7</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-display drop-shadow-lg">
+              {business.name.split("&")[0]} & <br className="hidden sm:block" />
+              <span className="text-primary">{business.name.split("&")[1]}</span>
+            </h1>
+
+            <div className="mt-2 sm:mt-3 flex items-center gap-2 sm:gap-3 text-lg sm:text-2xl md:text-3xl font-bold text-white drop-shadow-md">
+              <User className="size-5 sm:size-6 md:size-8" />
+              <span>Driver Also Available</span>
+            </div>
+            <p className="mt-3 sm:mt-5 text-sm sm:text-base md:text-lg text-white/90 leading-relaxed drop-shadow-sm">
+              Reliable and affordable self-drive car rentals in Jadcherla with easy booking and multiple vehicle options.
+            </p>
+
+            <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <a
+                href={business.phoneHref}
+                className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full bg-primary px-8 text-sm sm:text-base font-semibold text-white shadow-lg transition-opacity duration-200 hover:opacity-90 active:opacity-80 w-full sm:w-auto"
+              >
+                Book by Phone
+              </a>
+              <a
+                href="#cars"
+                className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full bg-white px-8 text-sm sm:text-base font-semibold text-ink shadow-lg hover:bg-gray-50 transition-all active:bg-gray-100 w-full sm:w-auto"
+              >
+                View Cars & Pricing
+              </a>
+            </div>
           </div>
         </div>
       </div>

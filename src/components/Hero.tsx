@@ -4,7 +4,7 @@ import { business } from "@/lib/site-data";
 
 export function Hero() {
   return (
-    <section id="top" className="relative mt-[64px] md:mt-[74px] h-[70vh] sm:h-[75vh] md:h-[80vh] min-h-[400px] max-h-[650px] overflow-hidden">
+    <section id="top" className="relative mt-[64px] md:mt-[74px] h-[calc(100vh-64px)] md:h-[calc(100vh-74px)] min-h-[450px] overflow-hidden">
       {/* Banner image — cropped from the top by using object-bottom */}
       <img
         src={rkBannerImg}

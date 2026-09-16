@@ -97,9 +97,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+        <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-center gap-3 text-sm text-white/50 text-center">
           <p>© {currentYear} {business.name}. All rights reserved.</p>
-          <p>Made for Jadcherla</p>
+          <p className="font-light">
+            Website Designed & Developed by{" "}
+            <a
+              href="https://www.linkedin.com/company/avighnex-it-services/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/80 hover:text-primary transition-colors hover:underline"
+            >
+              AVIGHNEX IT SERVICES
+            </a>
+          </p>
         </div>
       </div>
     </footer>
